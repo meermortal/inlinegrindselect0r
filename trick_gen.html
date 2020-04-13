@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>inlinegrindSelect0r</title>
+    <style>
+    	
+        body {
+            background-color: lightgrey;
+            padding: 0%;
+            margin: 0%;
+            font-size: xxx-large;
+            text-align: center;
+        }
+
+        h1 {
+            color:pink;
+            text-align: left;
+            padding-top: 10px;
+            padding-left: 10px;
+            margin: 0px auto;
+            font-size: 80px;
+            background-color: lightslategrey;
+            border-bottom: 1px solid black;
+        }
+
+        div {
+            margin-top: 0%;
+            padding-top: 0%;
+            padding-left: 50px;
+            height:500px;
+            font-size: 80px;
+            font-weight: bold;
+        }
+
+        button {
+            width: 550px;
+            height: 250px;
+            font-size: 55px;
+        }
+        
+    </style>
+    <script>
+        
+        //OPTIONS  
+        var optionMode = 0;
+        function setEasyMode() {
+            if (optionMode) {
+                optionMode = 0;
+            } else {
+                optionMode = 1;
+            }
+        };
+
+        ////////////////////////////////////////
+        // Trick Variables
+        var stance = [
+            " ",
+            "Switch ",
+        ];
+        var Allyoop = [
+            " ",
+            "AllyOop",
+        ];
+
+        var backTop = [
+            " ",
+            "Topside/Backside ",
+        ];
+        // -------------------- 
+        // The Main Trick List
+        var trickList = [
+            "50-50 ",
+            "Shifty/Royale ",
+            "Unity ",
+            "Soul ",
+            "Acid ",
+            "Pornstar ",
+            "Mizou ",
+            "Makio ",
+            "Backslide ",
+            "Torque ",
+            "SpecialMove ",
+
+        ];
+
+
+        var outro = [
+            " ",
+            "to fakie ",
+            "180 out ",
+            "360 out",
+            "540 out ",
+        ];
+        //End trick Arrays
+        ///////////////////////////////////
+
+        function displayTrick() {
+
+            // This Code generates random numbers based on array length 
+            // to pick the trick 
+            // that way you can add tricks to the trick arrays and the function
+            // will still work 
+
+            // 1.Normal || Switch
+            var randomNumber1 = Math.floor(Math.random() * stance.length);
+
+            // 2.AllyOop || !
+            var randomNumber2 = Math.floor(Math.random() * Allyoop.length);
+
+            // 3.Frontside || Back/TopSide
+            var randomNumber3 = Math.floor(Math.random() * backTop.length);
+
+            // 4.THE TRICKLIST!!!
+            var randomNumber4 = Math.floor(Math.random() * trickList.length);
+
+            // 5.Spin out
+            var randomNumber5 = Math.floor(Math.random() * outro.length);
+             ////////////////////////////////////////////////////////////
+            /*
+             option Mode 
+             */
+            
+            if (optionMode) {
+                
+                // Here is where the output can be limited to your 
+                // requirements
+                //
+                //    randomNumber1 = 0; // switch
+                    randomNumber2 = 0; // allyoop
+                    randomNumber3 = 0; // backsideTopside
+                    //The Main Tricklist
+                    randomNumber5 = // spinout
+                    Math.floor(Math.random() * 2); 
+                // -----------------
+                }
+            
+            //The trick Output
+            var randomTrick =
+                stance[randomNumber1] + " <br> " +
+                Allyoop[randomNumber2] + " <br> " +
+                backTop[randomNumber3] + " <br> " +
+                trickList[randomNumber4] + " <br> "  +
+                outro[randomNumber5];
+// Output trick to #grind P tag
+document.getElementById('grind').innerHTML = randomTrick;
+};
+//------------------------------------------------------//
+</script>
+</head>
+<!-- Ok Now we display to the user -->
+<body>
+	
+<h1>inlineGrindSelect<span id="optionsMode" onclick="setEasyMode(), showMode()">0</span>r</h1>
+<div>
+    <p id="grind"></p>
+</div>
+<button onclick="displayTrick()" > GoGoGadgetThumb </button>
+
+<!-- Display to show the toggled game option -->
+   <script>
+        function showMode() {
+            if (optionMode) { document.getElementById('optionsMode').innerHTML = "o";
+            } else { document.getElementById('optionsMode').innerHTML = "0"; 
+                    }}
+    </script>
+</body>
+</html>
+<!--Open text editor:
+Copy, Paste, Save As whatever(.HTML) & Open In Browser-->
+<!-- (c) meer_mortal 2020 -->
