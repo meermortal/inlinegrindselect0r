@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>inlinegrindSelect0r</title>
+    <style>
+    	
+        body {
+            background-color: lightgrey;
+            padding: 0%;
+            margin: 0%;
+            font-size: xxx-large;
+            text-align: center;
+        }
+
+        h1 {
+            color:pink;
+            text-align: left;
+            padding-top: 10px;
+            padding-left: 10px;
+            margin: 0px auto;
+            font-size: 80px;
+            background-color: lightslategrey;
+            border-bottom: 1px solid black;
+        }
+
+        div {
+            margin-top: 0%;
+            padding-top: 0%;
+            padding-left: 50px;
+            height:500px;
+            font-size: 80px;
+            font-weight: bold;
+        }
+
+        button {
+            width: 550px;
+            height: 250px;
+            font-size: 55px;
+        }
+        
+    </style>
+    <script>
+        
+        //OPTIONS  
+        var optionMode = 0;
+        function setEasyMode() {
+            if (optionMode) {
+                optionMode = 0;
+            } else {
+                optionMode = 1;
+            }
+        };
+
+        ////////////////////////////////////////
+        // Trick Variables
+        var stance = [
+            "",
+            "Switch",
+        ];
+        var Allyoop = [
+            "",
+            "AO ",
+        ];
+
+        var backTop = [
+            "",
+            "Top ",
+        ];
+        // -------------------- 
+        // The Main Trick List
+        var trickList = [
+            "50-50",
+            "Royale",
+            "Backslide",
+            "Unity",
+            "Soul",
+            "Acid",
+            "Mizou",
+            "Pornstar",
+            "Makio",
+            "SpecialMove",
+
+        ];
+
+
+        var outro = [
+            "",
+            " 180",
+            " 360",
+        ];
+        //End trick Arrays
+        ///////////////////////////////////
+
+        function displayTrick() {
+
+            // This Code generates random numbers based on array length 
+            // to pick the trick 
+            // that way you can add tricks to the trick arrays and the function
+            // will still work 
+
+            // 1.Normal || Switch
+            var randomNumber1 = Math.floor(Math.random() * stance.length);
+
+            // 2.AllyOop || !
+            var randomNumber2 = Math.floor(Math.random() * Allyoop.length);
+
+            // 3.Frontside || Back/TopSide
+            var randomNumber3 = Math.floor(Math.random() * backTop.length);
+
+            // 4.THE TRICKLIST!!!
+            var randomNumber4 = Math.floor(Math.random() * trickList.length);
+
+            // 5.Spin out
+            var randomNumber5 = Math.floor(Math.random() * outro.length);
+             ////////////////////////////////////////////////////////////
+            /*
+             option Mode 
+             */
+            
+            if (optionMode) {
+                
+                // Here is where the output can be limited to your 
+                // requirements (Easy Mode)
+                //
+                    randomNumber1 = 0; // switch
+                    //randomNumber2 = 0; // allyoop
+                    randomNumber3 = 0; // backsideTopside
+                    //The Main Tricklist
+                    randomNumber5 = 0; // spinout
+                    //Math.floor(Math.random() * 3); 
+                // -----------------
+                }
+            
+//The trick Output
+var switchTrick = stance[randomNumber1] + " ";
+            
+var randomTrick = Allyoop[randomNumber2] + backTop[randomNumber3] + trickList[randomNumber4];
+console.log(randomTrick);
+
+var outspin =  outro[randomNumber5];
+
+// let's edit some of the trick names based on randomTrick.output
+
+if (randomTrick == "AO 50-50") {
+    randomTrick = "Grind";  
+} 
+
+if (randomTrick == "AO Top 50-50") {
+    randomTrick = "Backside Grind";  
+}
+
+if (randomTrick == "Top 50-50") {
+    randomTrick = "Backside Grind";  
+}
+
+if (randomTrick == "Top Royale") {
+    randomTrick = "Backside Royale";  
+}
+
+if (randomTrick == "AO Royale") {
+    randomTrick = "Farv";  
+}
+
+if (randomTrick == "AO Top royale") {
+    randomTrick = "Backside Farv";  
+}
+
+if (randomTrick == "AO Backslide") {
+    randomTrick = "Torque";  
+}
+
+if (randomTrick == "AO Top Backslide") {
+    randomTrick = "Back Torque";  
+}
+
+if (randomTrick == "Top Backslide") {
+    randomTrick = "Backside Backslide";  
+}
+
+if (randomTrick == "AO Backslide") {
+    randomTrick = "Torque";  
+}
+
+if (randomTrick == "Top Unity") {
+    randomTrick = "BackSide Unity";  
+}
+
+if(randomTrick == "AO Unity") {
+    randomTrick = "Savannah";
+} 
+
+if(randomTrick == "AO Top Unity") {
+    randomTrick = "Back Savannah";
+} 
+
+if (randomTrick == "Top Mizou") {
+    randomTrick = "SweatStance";  
+}
+
+if (randomTrick == "AO Top Mizou") {
+    randomTrick = "KindGrind";  
+}
+
+if (randomTrick == "Top Pornstar") {
+    randomTrick = "TopPorn";  
+} 
+
+if (randomTrick == "AO Top Pornstar") {
+    randomTrick = "AO TopPorn";  
+} 
+
+if (randomTrick == "Top Makio") {
+    randomTrick = "FishBrain";  
+} 
+
+if (randomTrick == "AO Top Makio") {
+    randomTrick = "AO FishBrain";  
+} 
+
+if (randomTrick == "Top SpecialMove") {
+    randomTrick = "Switch Up";  
+}
+
+if (randomTrick == "AO Top SpecialMove") {
+    randomTrick = "AO Switch Up";  
+}
+
+
+
+var trickOutPut = switchTrick + randomTrick + outspin ;
+
+// Output trick to #grind P tag
+document.getElementById('grind').innerHTML = trickOutPut;
+
+};
+//------------------------------------------------------//
+</script>
+</head>
+<body>
+	
+<h1>inlineGrindSelect<span id="optionsMode" onclick="setEasyMode(), showMode()">0</span>r</h1>
+
+
+<div>
+    <p id="grind">Press the button, monkey!</p>
+</div>
+
+
+
+<button onclick="displayTrick()" > GoGoGadgetThumb </button>
+
+
+
+<!-- Display to show the toggled game option -->
+   <script>
+//
+
+function showMode() {
+    if (optionMode) { document.getElementById('optionsMode').innerHTML = "o";
+      } else { document.getElementById('optionsMode').innerHTML = "0"; 
+        }}
+</script>
+</body>
+</html>
+<!--Open text editor:
+Copy, Paste, Save As whatever(.HTML) & Open In Browser-->
+<!-- (c) meer_mortal 2020 -->
